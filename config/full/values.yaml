@@ -1,0 +1,12 @@
+#@data/values-schema
+---
+registry:
+  server: ""
+  repository:
+    build: ""
+    workload: ""
+  username: ""
+  password: ""
+tanzunet:
+  username: ""
+  password: ""

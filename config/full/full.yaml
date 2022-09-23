@@ -1,0 +1,56 @@
+#@ load("@ytt:data", "data")
+---
+profile: full
+ceip_policy_disclosed: true
+
+buildservice:
+  kp_default_repository: #@ data.values.registry.server + "/" + data.values.registry.repository.build
+  kp_default_repository_username: #@ data.values.registry.username
+  kp_default_repository_password: #@ data.values.registry.password
+  descriptor_name: full
+  enable_automatic_dependency_updates: true
+  tanzunet_username: #@ data.values.tanzunet.username
+  tanzunet_password: #@ data.values.tanzunet.password
+
+supply_chain: basic
+ootb_supply_chain_basic:
+  registry:
+    server: #@ data.values.registry.server
+    repository: #@ data.values.registry.repository.workload
+  cluster_builder: default
+  service_account: default
+
+contour:
+  envoy:
+    service:
+      type: LoadBalancer
+
+shared:
+  ingress_domain: "example.com"
+
+excluded_packages:
+#! - accelerator.apps.tanzu.vmware.com
+- api-portal.tanzu.vmware.com
+- backend.appliveview.tanzu.vmware.com
+- build.appliveview.tanzu.vmware.com
+#! - cnrs.tanzu.vmware.com
+- connector.appliveview.tanzu.vmware.com
+- controller.conventions.apps.tanzu.vmware.com
+- conventions.appliveview.tanzu.vmware.com
+- developer-conventions.tanzu.vmware.com
+- grype.scanning.apps.tanzu.vmware.com
+- image-policy-webhook.signing.apps.tanzu.vmware.com
+- learningcenter.tanzu.vmware.com
+- metadata-store.apps.tanzu.vmware.com
+- ootb-supply-chain-testing-scanning.tanzu.vmware.com
+- ootb-supply-chain-testing.tanzu.vmware.com
+- policy.apps.tanzu.vmware.com
+- scanning.apps.tanzu.vmware.com
+- service-bindings.labs.vmware.com
+- services-toolkit.tanzu.vmware.com
+- snyk.scanning.apps.tanzu.vmware.com
+- spring-boot-conventions.tanzu.vmware.com
+- sso.apps.tanzu.vmware.com
+- tap-gui.tanzu.vmware.com
+- tap-telemetry.tanzu.vmware.com
+- workshops.learningcenter.tanzu.vmware.com
