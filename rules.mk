@@ -10,7 +10,7 @@ kapp-controller.version := latest
 secretgen-controller.version := latest
 
 # The values file is prepared for 1.3.0+ so yeah.
-tap.version := 1.3.0-build.26
+tap.version := 1.3.0-rc.1
 # Only full is supported at the moment.
 tap.profile := full
 tap.namespace := tap-install
