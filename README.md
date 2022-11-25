@@ -44,8 +44,9 @@
     ```
     tanzu apps workload create <your-workload-name> \
       --namespace <your-dev-namespace> \
+      --type web \
       -s <location-to-store-your-source-bundle> \
       --local-path . \
-      --label "apps.tanzu.vmware.com/workload-type=web"
+      --build-env "BP_FUNCTION=func.main"
     ```
 1. Profit!
