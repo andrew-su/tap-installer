@@ -20,6 +20,9 @@ ootb_supply_chain_basic:
   cluster_builder: default
   service_account: default
 
+tap_telemetry:
+   installed_for_vmware_internal_use: "true"
+
 contour:
   envoy:
     service:
